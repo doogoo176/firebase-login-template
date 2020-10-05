@@ -74,11 +74,9 @@
         var token = result.credential.accessToken;
         var idToken = result.credential.idToken;
         var user = result;
-        console.log(token);
-        console.log(user);
-        console.log(idToken);
+        
         var user = firebase.auth().currentUser;
-    console.log(user);
+    
         msg(true, "登入成功");
         localStorage.setItem('token',idToken);
         CheckPage();

@@ -1,15 +1,4 @@
 $(document).ready(function(){
-console.log('login test');
-    var user = firebase.auth().currentUser;
-    console.log(user);
-  if (user) {
-    // User is signed in.
-    alert('登入成功')
-  } else {
-    // No user is signed in.
-    alert('login fail');
-  }
-
 
     CheckPage();
 
@@ -53,7 +42,6 @@ function Login() {
 }
 
 function GetData() {
- console.log( localStorage.getItem('token'));
     var token = localStorage.getItem('token');
     $.ajax({
         url:'https://ibabyapi-firebase.herokuapp.com/GetData',
@@ -74,7 +62,7 @@ function GetData() {
 
 
 function msg(issuccess, msg ){
-    console.log(issuccess);
+
     if ( issuccess ) {
         $("#msg").removeClass('alert-danger').addClass('alert-success').empty().text(msg).show();
         setTimeout(function(){
@@ -95,6 +83,7 @@ function LogOut() {
 function CheckPage() {
     
     var token = localStorage.getItem('token');
+    console.log(token);
     $("#token").empty().text(token);
     if ( token != null ) {
         GetData();
