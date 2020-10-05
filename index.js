@@ -1,6 +1,7 @@
 $(document).ready(function(){
 console.log('login test');
     var user = firebase.auth().currentUser;
+    console.log(user);
   if (user) {
     // User is signed in.
     alert('登入成功')
