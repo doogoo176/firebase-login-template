@@ -71,9 +71,15 @@
       firebase.auth().signInWithPopup(provider).then(function(result) {
         // 可以獲得 Google 提供 token，token可透過 Google API 獲得其他數據。  
         var token = result.credential.accessToken;
+        var idToken = result.credential.idToken;
         var user = result;
         console.log(token);
         console.log(user);
+        console.log(idToken);
+
+        msg(true, "登入成功");
+        localStorage.setItem('token',idToken);
+        CheckPage();
       });  
     }
 
