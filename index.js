@@ -95,7 +95,7 @@ function LogOut() {
 function CheckPage() {
     
     var token = localStorage.getItem('token');
-
+    $("#token").empty().text(token);
     if ( token != null ) {
         GetData();
         $('.form-signin').hide();
