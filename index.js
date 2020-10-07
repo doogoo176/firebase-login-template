@@ -21,7 +21,7 @@ function Login() {
     };
     
     $.ajax({
-        url:'https://ibabyapi-firebase.herokuapp.com/GetTokenByEmail',
+        url:'https://firebaseapi.herokuapp.com/GetTokenByEmail',
         method:'POST',
         dataType:'json',
         contentType : 'application/json; charset=utf-8',
@@ -44,7 +44,7 @@ function Login() {
 function GetData() {
     var token = localStorage.getItem('token');
     $.ajax({
-        url:'https://ibabyapi-firebase.herokuapp.com/GetData',
+        url:'https://firebaseapi.herokuapp.com/GetData',
         method:'GET',
         beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", "Bearer " + token );
