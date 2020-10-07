@@ -31,7 +31,7 @@ function Login() {
             console.log(res );
             if ( res.status == 200 ) {
                 msg(true, "登入成功");
-                localStorage.setItem('token', res.responseText);
+                localStorage.setItem('token', res.responseJSON.msg);
                 CheckPage();
             } else {
                 msg(false, "登入失敗");
@@ -52,7 +52,7 @@ function GetData() {
         complete:function(res){
             console.log(res );
             if ( res.status == 200 ) {
-                $("#result").children("p").empty().text(res.responseText);
+                $("#result").children("p").empty().text(res.responseJSON.msg);
             } else {
                 msg(false, "取得資料失敗");
             }
